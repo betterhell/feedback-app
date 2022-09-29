@@ -32,6 +32,15 @@ header {
   margin-bottom: 30px;
 }
 
+header a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+header h2 {
+  color: #ff6a95;
+}
+
 .card {
   background-color: #fff;
   color: #333;
@@ -196,6 +205,7 @@ input:focus {
 .about-link a {
   color: #fff;
   cursor: pointer;
+  padding: 10px;
 }
 
 .about-link a:hover {
