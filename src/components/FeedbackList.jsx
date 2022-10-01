@@ -17,6 +17,7 @@ function FeedbackList() {
         <AnimatePresence>
             {feedback.map((item) => (
                 <motion.div
+                    className="feedback-list__item"
                     key={item.id}
                     initial={{opacity: 0}}
                     animate={{opacity: 1}}
