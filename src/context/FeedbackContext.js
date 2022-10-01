@@ -8,7 +8,7 @@ export const FeedbackProvider = ({children}) => {
 
     const [feedbackEdit, setFeedbackEdit] = useState({
         item: {},
-        edit: false
+        edit: false,
     })
 
     useEffect(() => {
@@ -40,6 +40,7 @@ export const FeedbackProvider = ({children}) => {
         })
 
         const data = await response.json()
+
         setFeedback([data, ...feedback])
     }
 
@@ -62,10 +63,12 @@ export const FeedbackProvider = ({children}) => {
 
         const data = await response.json()
 
-        setFeedback(
-            feedback.map((item) => item.id === id
-            ? {...item, ...data}
-            : item))
+        setFeedback(feedback.map((item) => (item.id === id ? data : item)))
+
+        setFeedbackEdit({
+            item: {},
+            edit: false,
+        })
     }
 
     return <FeedbackContext.Provider
